@@ -205,6 +205,8 @@
     <Content Include="assets\img\header_bg.jpg" />
     <Content Include="assets\img\iphone.png" />
     <Content Include="assets\img\macbook.png" />
+    <Content Include="assets\img\minimo_icone_f-escuro.png" />
+    <Content Include="assets\img\minimo_marca_branco.png" />
     <Content Include="assets\img\portfolio\folio01.jpg" />
     <Content Include="assets\img\portfolio\folio02.jpg" />
     <Content Include="assets\img\portfolio\folio03.jpg" />
@@ -214,6 +216,10 @@
     <Content Include="assets\img\portfolio\folio07.jpg" />
     <Content Include="assets\img\portfolio\folio08.jpg" />
     <Content Include="assets\img\portfolio\folio09.jpg" />
+    <Content Include="assets\img\team\brunoro.jpg" />
+    <Content Include="assets\img\team\carareto.jpg" />
+    <Content Include="assets\img\team\mainieri.jpg" />
+    <Content Include="assets\img\team\orsatti.png" />
     <Content Include="assets\img\team\team01.jpg" />
     <Content Include="assets\img\team\team02.jpg" />
     <Content Include="assets\img\team\team03.jpg" />
