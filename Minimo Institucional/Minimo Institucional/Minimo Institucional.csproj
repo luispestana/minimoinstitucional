@@ -299,6 +299,7 @@
     <Content Include="assets\img\portfolio\.DS_Store" />
     <Content Include="assets\img\team\.DS_Store" />
     <Content Include="assets\js\.DS_Store" />
+    <None Include="Properties\PublishProfiles\pubprofile.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
