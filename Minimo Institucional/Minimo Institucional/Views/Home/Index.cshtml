@@ -427,6 +427,7 @@
             <hr>
             <br>
             <br>
+            <span id="msgSucesso"></span>
             
 
             <div class="col-lg-6">
@@ -545,6 +546,8 @@
         $.ajax({
             url: "../Home/EnviaEmailContato?nome=" + nome + "&telefone=" + tel + "&email=" + email + "&mensagem=" + msg + "&instituicao=" + inst,
             success: function (data) {
+                var e = document.getElementById("msgSucesso");
+                e.innerText = "Mensagem enviada com sucesso";
                 //$("#subTab1Acompanhamentos").html(data);
                 //$("#content").activity(false);
             }

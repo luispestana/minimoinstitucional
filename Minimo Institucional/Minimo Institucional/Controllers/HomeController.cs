@@ -29,7 +29,6 @@ namespace Minimo_Institucional.Controllers
             return View();
         }
 
-        [HttpGet]
         public ActionResult EnviaEmailContato(string nome, string telefone, string email, string mensagem, string instituicao)
         {
             return RedirectToAction("Index", "Home");
