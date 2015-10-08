@@ -427,14 +427,12 @@
             <hr>
             <br>
             <br>
-            <span id="msgSucesso"></span>
-            
 
             <div class="col-lg-6">
                 @*<h3>Entre em contato</h3>*@
                 @*<p>Register to our newsletter and be updated with the latests information regarding our services, offers and much more.</p>*@
                 <p>
-                    
+
                     <form class="form-horizontal" role="form">
                         <div class="row">
                             <div class="form-group col-lg-6">
@@ -470,18 +468,29 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">                        
+                        <div class="row">
                         </div>
-                        
-                        
+
+
                         <div class="form-group">
                             <div class="col-lg-10">
-                                <button type="submit" class="btn btn-success" onclick="EnviarEmailContato()">Enviar</button>
+                                <button type="submit" class="btn btn-success" id="botaoEnviar">Enviar</button>
+                                <span class="invisible">#</span>
+
+                                <span id="msgSucesso" style="color:#0fa01a"></span>
+                                <span id="msgErro" style="color:red"></span>
+
+                                <span id="ajaxBusy" hidden>
+                                    <img src="images/Progressbar.gif">
+                                </span>
                             </div>
+
+                            
                         </div>
-                    </form><!-- form -->
-                </p>
-            </div><!-- col -->
+                        
+            </form><!-- form -->
+            </p>
+        </div><!-- col -->
 
             <div class="col-lg-6">
                 <h3>@*Contato*@</h3>
@@ -546,13 +555,52 @@
         $.ajax({
             url: "../Home/EnviaEmailContato?nome=" + nome + "&telefone=" + tel + "&email=" + email + "&mensagem=" + msg + "&instituicao=" + inst,
             success: function (data) {
-                var e = document.getElementById("msgSucesso");
-                e.innerText = "Mensagem enviada com sucesso";
+                debugger;
+                alert(data);
+                //var e = document.getElementById("msgSucesso");
+                //e.innerText = "Mensagem enviada com sucesso";
                 //$("#subTab1Acompanhamentos").html(data);
                 //$("#content").activity(false);
             }
         });
 
     };
+
+</script>
+
+<script type="text/javascript">
+    $(function () {
+
+        $("#botaoEnviar").click(function (e) {
+            $('#ajaxBusy').show();
+            e.preventDefault();
+
+            var esuc = document.getElementById("msgSucesso");
+            var err = document.getElementById("msgErro");
+            err.innerText = "";
+            esuc.innerText = "";
+
+            var email = document.getElementById("emailContato").value;
+            var tel = document.getElementById("telefoneContato").value;
+            var msg = document.getElementById("mensagemContato").value;
+            var inst = document.getElementById("instituicaoContato").value;
+            var nome = document.getElementById("nomeContato").value;
+            $.post("@Url.Action("EnviaEmailContato", "Home")", { email: email, nome: nome, telefone: tel, mensagem: msg, instituicao: inst }, function (data)
+            {
+                //alert(data);
+                if (data == "") {
+                    esuc.innerText = "Mensagem enviada!";
+                }
+                else
+                {
+                    err.innerText = data;
+                }
+
+                $('#ajaxBusy').hide();
+
+            });
+        });
+    });
+
 
 </script>
