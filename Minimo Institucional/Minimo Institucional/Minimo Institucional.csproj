@@ -212,6 +212,7 @@
     <Content Include="assets\img\macbook.png" />
     <Content Include="assets\img\minimo_icone_f-escuro.png" />
     <Content Include="assets\img\minimo_marca_branco.png" />
+    <Content Include="assets\img\minimo_marca_preto.jpg" />
     <Content Include="assets\img\portfolio\folio01.jpg" />
     <Content Include="assets\img\portfolio\folio02.jpg" />
     <Content Include="assets\img\portfolio\folio03.jpg" />
